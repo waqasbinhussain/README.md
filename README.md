@@ -1,7 +1,7 @@
-## 🤖 AI Model Architectures (Vertical, Non-Overlapping)
+## 🤖 AI Model Architectures (Top-to-Bottom Flow)
 
 ```mermaid
-flowchart TD
+flowchart TB
 
 %% ML Flow
 subgraph ML["🟦 Machine Learning (ML): Decision Tree"]
