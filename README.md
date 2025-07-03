@@ -1,33 +1,24 @@
-# 🤖 AI Model Architecture Flow (Node-Based View)
-
-This visual shows a full **AI pipeline** from data input ➝ processing ➝ model selection ➝ output generation using ML, DL, and Transformer models.
+## 🤖 AI Model Architecture Flow (GitHub-Safe Version)
 
 ```mermaid
 graph TB
-    %% Input Layer
-    A[📥 Input Layer<br>(CSV, Text, Image)]:::input
+    A[Input Layer\n(CSV, Text, Image)]:::input
+    B[Preprocessing\n(Cleaning, Tokenization, Resize)]:::process
+    C[Feature Engineering or Embedding\n(Manual or Learned)]:::process
 
-    %% Processing
-    B[🧹 Preprocessing<br>(Cleaning, Tokenization, Resize)]:::process
-    C[📊 Feature Engineering or Embedding<br>(Manual or Learned)]:::process
+    D1[ML Model\n(Decision Tree)]:::mlmodel
+    D2[DL Model\n(CNN / RNN / LSTM)]:::dlmodel
+    D3[Transformer Model\n(Encoder–Decoder)]:::transformer
 
-    %% Model Options
-    D1[🌳 ML Model<br>(e.g., Decision Tree)]:::mlmodel
-    D2[🧠 DL Model<br>(CNN / RNN / LSTM)]:::dlmodel
-    D3[🔁 Transformer Model<br>(Encoder–Decoder)]:::transformer
+    E1[ML Output:\nReport, Prediction]:::output
+    E2[DL Output:\nClass, Score, Forecast]:::output
+    E3[Transformer Output:\nText, Answer, Translation]:::output
 
-    %% Outputs
-    E1[📈 ML Output:<br> Report, Prediction]:::output
-    E2[📄 DL Output:<br> Class, Score, Forecast]:::output
-    E3[📝 Transformer Output:<br> Text, Answer, Translation]:::output
-
-    %% Flow connections
     A --> B --> C
     C --> D1 --> E1
     C --> D2 --> E2
     C --> D3 --> E3
 
-    %% Styles
     classDef input fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a;
     classDef process fill:#fef3c7,stroke:#facc15,color:#92400e;
     classDef mlmodel fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,font-weight:bold;
