@@ -1,18 +1,16 @@
-## 🤖 AI Model Architecture Flow (GitHub-Safe Version)
-
 ```mermaid
 graph TB
-    A[Input Layer\n(CSV, Text, Image)]:::input
-    B[Preprocessing\n(Cleaning, Tokenization, Resize)]:::process
-    C[Feature Engineering or Embedding\n(Manual or Learned)]:::process
+    A[Input Layer: CSV, Text, Image]:::input
+    B[Preprocessing: Cleaning, Tokenization]:::process
+    C[Feature Engineering or Embedding]:::process
 
-    D1[ML Model\n(Decision Tree)]:::mlmodel
-    D2[DL Model\n(CNN / RNN / LSTM)]:::dlmodel
-    D3[Transformer Model\n(Encoder–Decoder)]:::transformer
+    D1[ML Model: Decision Tree]:::mlmodel
+    D2[DL Model: CNN, RNN, LSTM]:::dlmodel
+    D3[Transformer Model: Encoder-Decoder]:::transformer
 
-    E1[ML Output:\nReport, Prediction]:::output
-    E2[DL Output:\nClass, Score, Forecast]:::output
-    E3[Transformer Output:\nText, Answer, Translation]:::output
+    E1[ML Output: Report or Prediction]:::output
+    E2[DL Output: Class, Score, Forecast]:::output
+    E3[Transformer Output: Text, Answer, Translation]:::output
 
     A --> B --> C
     C --> D1 --> E1
