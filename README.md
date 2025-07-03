@@ -1,17 +1,4 @@
-# README.md
-“Visual AI Flow for Beginners”
-## 🤖 AI Model Pipeline (With Custom Colors and Emojis)
-
-# 🤖 AI Model Architectures: Visual Flowcharts with Mermaid
-
-This repository provides simplified visual representations of:
-- Machine Learning (ML)
-- Deep Learning (DL)
-- Transformers (Encoder–Decoder)
-- LSTM, GANs, and Reinforcement Learning (RL)
-
-These diagrams are perfect for beginners, interviews, and LinkedIn content.
-
+## 🤖 AI Model Architectures (Vertical, Non-Overlapping)
 
 ```mermaid
 flowchart TD
@@ -28,7 +15,7 @@ subgraph ML["🟦 Machine Learning (ML): Decision Tree"]
     A1 --> B1 --> C1 --> D1 --> E1 --> F1 --> G1
 end
 
-%% DL Basic Flow
+%% DL: CNN / RNN Flow
 subgraph DL1["🟩 Deep Learning (DL): CNN / RNN"]
     A2(["🖼️/📝 Input: Image / Text / Audio"]):::input
     B2(["🔧 Preprocessing"]):::process
