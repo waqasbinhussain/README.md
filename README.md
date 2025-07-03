@@ -1,83 +1,36 @@
-## 🤖 AI Model Architectures (Top-to-Bottom Flow)
+# 🤖 AI Model Architecture Flow (Node-Based View)
+
+This visual shows a full **AI pipeline** from data input ➝ processing ➝ model selection ➝ output generation using ML, DL, and Transformer models.
 
 ```mermaid
-flowchart TB
+graph TB
+    %% Input Layer
+    A[📥 Input Layer<br>(CSV, Text, Image)]:::input
 
-%% ML Flow
-subgraph ML["🟦 Machine Learning (ML): Decision Tree"]
-    A1(["📥 Input: Structured Data (CSV)"]):::input
-    B1(["🧹 Preprocessing"]):::process
-    C1(["🛠️ Feature Engineering"]):::process
-    D1(["🌳 Decision Tree Model"]):::mlmodel
-    E1(["🧪 Training & Validation"]):::process
-    F1(["🎯 Prediction"]):::output
-    G1(["📊 Output: Report or Decision"]):::output
-    A1 --> B1 --> C1 --> D1 --> E1 --> F1 --> G1
-end
+    %% Processing
+    B[🧹 Preprocessing<br>(Cleaning, Tokenization, Resize)]:::process
+    C[📊 Feature Engineering or Embedding<br>(Manual or Learned)]:::process
 
-%% DL: CNN / RNN Flow
-subgraph DL1["🟩 Deep Learning (DL): CNN / RNN"]
-    A2(["🖼️/📝 Input: Image / Text / Audio"]):::input
-    B2(["🔧 Preprocessing"]):::process
-    C2(["🧠 Model: CNN or RNN"]):::dlmodel
-    D2(["📡 Forward Pass"]):::process
-    E2(["🔁 Backpropagation"]):::process
-    F2(["🎯 Prediction (Label/Score)"]):::output
-    G2(["🧾 Output: Human-Readable Format"]):::output
-    A2 --> B2 --> C2 --> D2 --> E2 --> F2 --> G2
-end
+    %% Model Options
+    D1[🌳 ML Model<br>(e.g., Decision Tree)]:::mlmodel
+    D2[🧠 DL Model<br>(CNN / RNN / LSTM)]:::dlmodel
+    D3[🔁 Transformer Model<br>(Encoder–Decoder)]:::transformer
 
-%% Transformer Flow
-subgraph DL2["🟪 Transformer (DL): Encoder–Decoder"]
-    A3(["📝 Input: Text Sequence"]):::input
-    B3(["🔤 Tokenization + Embedding"]):::process
-    C3(["📥 Encoder (Context Understanding)"]):::dlmodel
-    D3(["📤 Decoder (Text Generation)"]):::dlmodel
-    E3(["🎯 Attention + Feedforward Layers"]):::process
-    F3(["🧾 Output Tokens"]):::output
-    G3(["📄 Output: Text / Translation / Answer"]):::output
-    A3 --> B3 --> C3 --> D3 --> E3 --> F3 --> G3
-end
+    %% Outputs
+    E1[📈 ML Output:<br> Report, Prediction]:::output
+    E2[📄 DL Output:<br> Class, Score, Forecast]:::output
+    E3[📝 Transformer Output:<br> Text, Answer, Translation]:::output
 
-%% LSTM Flow
-subgraph DL3["🟫 DL: LSTM (Long Short-Term Memory)"]
-    A4(["📈 Input: Time Series / Text"]):::input
-    B4(["🔠 Tokenization / Sequence Prep"]):::process
-    C4(["⏳ Model: LSTM Layers"]):::dlmodel
-    D4(["📡 Forward Pass"]):::process
-    E4(["🔁 Backprop Through Time"]):::process
-    F4(["🔮 Prediction: Sequence Output"]):::output
-    G4(["📉 Output: Forecast, Text"]):::output
-    A4 --> B4 --> C4 --> D4 --> E4 --> F4 --> G4
-end
+    %% Flow connections
+    A --> B --> C
+    C --> D1 --> E1
+    C --> D2 --> E2
+    C --> D3 --> E3
 
-%% GAN Flow
-subgraph DL4["🟥 DL: GAN (Generative Adversarial Network)"]
-    A5(["🎲 Input: Random Noise"]):::input
-    B5(["🧪 Generator: Create Fake Data"]):::dlmodel
-    C5(["🕵️ Discriminator: Real vs Fake"]):::dlmodel
-    D5(["🤼 Adversarial Training Loop"]):::process
-    E5(["🔄 Improved Generator"]):::process
-    F5(["🖼️ Output: Fake Image/Text/Audio"]):::output
-    A5 --> B5 --> C5 --> D5 --> E5 --> F5
-end
-
-%% RL Flow
-subgraph RL["🟨 Reinforcement Learning (RL)"]
-    A6(["🌍 Input: Environment State"]):::input
-    B6(["🧠 Agent (Policy + Exploration)"]):::rlmodel
-    C6(["⚙️ Action Taken"]):::process
-    D6(["🏆 Reward / Feedback"]):::process
-    E6(["📈 Policy Update"]):::process
-    F6(["🧠 Smarter Agent"]):::process
-    G6(["🚀 Output: Strategy / Plan"]):::output
-    A6 --> B6 --> C6 --> D6 --> E6 --> F6 --> G6
-end
-
-%% Style Classes
-classDef input fill:#d4e4ff,stroke:#3b82f6,color:#111;
-classDef process fill:#fff4e5,stroke:#f59e0b,color:#111;
-classDef output fill:#dcfce7,stroke:#22c55e,color:#111;
-classDef mlmodel fill:#e0f2fe,stroke:#0284c7,color:#111,font-weight:bold;
-classDef dlmodel fill:#ede9fe,stroke:#7c3aed,color:#111,font-weight:bold;
-classDef rlmodel fill:#fef9c3,stroke:#eab308,color:#111,font-weight:bold;
+    %% Styles
+    classDef input fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a;
+    classDef process fill:#fef3c7,stroke:#facc15,color:#92400e;
+    classDef mlmodel fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,font-weight:bold;
+    classDef dlmodel fill:#ede9fe,stroke:#7c3aed,color:#4c1d95,font-weight:bold;
+    classDef transformer fill:#ecfdf5,stroke:#14b8a6,color:#064e3b,font-weight:bold;
+    classDef output fill:#dcfce7,stroke:#22c55e,color:#14532d;
